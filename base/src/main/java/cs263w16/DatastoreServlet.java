@@ -98,7 +98,6 @@ public class DatastoreServlet extends HttpServlet {
     	  List<Entity> result = datastore.prepare(findAll).asList(FetchOptions.Builder.withDefaults());
     	  for(int i =0; i < result.size(); i++){
     		  Entity e = result.get(i);
-    		  
     		  resp.getWriter().println("<h3> DataStore Created Date: "+ e.getProperty("date") +  " and VALUE: "+ e.getProperty("value")+"</h3>");
     		  if(syncCache.contains(e.getKey().getName()))
     			  {
