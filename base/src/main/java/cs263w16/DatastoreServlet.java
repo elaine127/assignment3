@@ -56,10 +56,9 @@ public class DatastoreServlet extends HttpServlet {
       		tne.setProperty("date", date);
       		datastore.put(tne);
       		resp.getWriter().println("<h3>Stored KEY: "+ keyname+ " and VALUE: "+ value+ " in Datastore</h3>");
-      		
-//      	syncCache.put(keyname, value);
-//    		resp.getWriter().println("<h3>Stored KEY: "+ keyname+ " and VALUE: "+ value+ " in Memcache</h3>");  	     
-//      	
+      	    syncCache.put(keyname, tne);
+    		resp.getWriter().println("<h3>Stored KEY: "+ keyname+ " and VALUE: "+ value+ " in Memcache</h3>");  	     
+      	
       	}
       	else{
       		//Display the element of kind TaskData in the
